@@ -1,4 +1,5 @@
 const express = require('express');
+const shortid = require('shortid');
 const {
     mongo
 } = require('../config/config');
@@ -25,7 +26,8 @@ class Register extends express.Router {
             } else {
                 await mongo.insert('users', {
                     userName,
-                    password
+                    password,
+                    openId:shortid.generate(),
                 });
                 res.send('注册成功');
             }

@@ -23,11 +23,11 @@ class Login extends express.Router {
                         });
                     }
 
-                    req.session.userName = userName;
+                    req.session.openId = result[0].openId;
                     res.json({
                         code: 0,
                         data: {
-                            openId: 'yohoj'
+                            openId: result[0].openId,
                         }
                     });
                 });

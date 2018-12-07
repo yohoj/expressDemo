@@ -28,6 +28,8 @@ class Register extends express.Router {
                     userName,
                     password,
                     openId:shortid.generate(),
+                    cats: [],
+                    gold: 0,
                 });
                 res.send('注册成功');
             }
